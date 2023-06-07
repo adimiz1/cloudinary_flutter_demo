@@ -1,7 +1,7 @@
 
 import 'dart:io';
+import 'package:cloudinary_url_gen/transformation/delivery/delivery_actions.dart';
 import 'package:device_info/device_info.dart';
-import 'package:cloudinary_dart/transformation/delivery/delivery_actions.dart';
 class FormatBuilder {
 
   static String format = Format.jpg;

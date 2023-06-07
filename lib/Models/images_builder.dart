@@ -1,38 +1,38 @@
-import 'package:cloudinary_dart/cloudinary.dart';
-import 'package:cloudinary_dart/transformation/adjust/adjust.dart';
-import 'package:cloudinary_dart/transformation/delivery/delivery_actions.dart';
-import 'package:cloudinary_dart/transformation/effect/effect.dart';
-import 'package:cloudinary_dart/transformation/resize/resize.dart';
-import 'package:cloudinary_dart/transformation/transformation.dart';
+import 'package:cloudinary_flutter/cloudinary_context.dart';
+import 'package:cloudinary_url_gen/cloudinary.dart';
+import 'package:cloudinary_url_gen/transformation/delivery/delivery_actions.dart';
+import 'package:cloudinary_url_gen/transformation/effect/effect.dart';
+import 'package:cloudinary_url_gen/transformation/resize/resize.dart';
+import 'package:cloudinary_url_gen/transformation/transformation.dart';
 
 import 'image_model.dart';
 
 class ImagesBuilder {
   List<ImageModel> build() {
-    Cloudinary cloudinary = Cloudinary.fromCloudName(cloudName: 'adimizrahi2');
+    CloudinaryContext.cloudinary = Cloudinary.fromCloudName(cloudName: 'dus1oxlpe');
+    Cloudinary cloudinary = Cloudinary.fromCloudName(cloudName: 'dus1oxlpe');
     Transformation transformation = Transformation()
      ..delivery(Quality(Quality.auto()))
      ..delivery(Format(Format.avif))
     ..resize(Resize.thumbnail()..width(500))
     ..delivery(Dpr(Dpr.auto));
-    // ..resize(Resize.thumbnail()..width(500));
-    // ..delivery(Dpr(Dpr.auto));
     var url = cloudinary.image('tiger').transformation(transformation).toString();
-    return [ImageModel(cloudinary.image('tiger').toString(), 'tiger', false),
-      ImageModel(cloudinary.image('tiger').transformation(transformation).toString(), 'tiger', true),
-      ImageModel(cloudinary.image('lion').toString(), 'lion', false),
-      ImageModel(cloudinary.image('lion').transformation(transformation).toString(), 'lion', true),
-      ImageModel(cloudinary.image('rabbit').toString(), 'rabbit', false),
-      ImageModel(cloudinary.image('rabbit').transformation(transformation).toString(), 'rabbit', true),
-      ImageModel(cloudinary.image('dogs').toString(), 'dogs', false),
-      ImageModel(cloudinary.image('dogs').transformation(transformation).toString(), 'dogs', true),
-      ImageModel(cloudinary.image('cats').toString(), 'cats', false),
-      ImageModel(cloudinary.image('cats').transformation(transformation).toString(), 'cats', true),
-      ImageModel(cloudinary.image('bird').toString(), 'bird', false),
-      ImageModel(cloudinary.image('bird').transformation(transformation).toString(), 'bird', true),
-      ImageModel(cloudinary.image('dog_in_cup').toString(), 'dog_in_cup', false),
-      ImageModel(cloudinary.image('dog_in_cup').transformation(transformation).toString(), 'dog_in_cup', true),
-      ImageModel(cloudinary.image('fox').toString(), 'fox', false),
-      ImageModel(cloudinary.image('fox').transformation(transformation).toString(), 'fox', true),];
+    String url2 = cloudinary.image('test').transformation(Transformation()..effect(Effect.sepia(50))).toString();
+    return [ImageModel(cloudinary.image('lol').toString(), 'lol', false),
+      ImageModel(cloudinary.image('lol').transformation(transformation).toString(), 'lol', true),
+      ImageModel(cloudinary.image('total_war_hammer').toString(), 'total_war_hammer', false),
+      ImageModel(cloudinary.image('total_war_hammer').transformation(transformation).toString(), 'total_war_hammer', true),
+      ImageModel(cloudinary.image('hearthstone').toString(), 'hearthstone', false),
+      ImageModel(cloudinary.image('hearthstone').transformation(transformation).toString(), 'hearthstone', true),
+      ImageModel(cloudinary.image('god_of_war').toString(), 'god_of_war', false),
+      ImageModel(cloudinary.image('god_of_war').transformation(transformation).toString(), 'god_of_war', true),
+      ImageModel(cloudinary.image('wow').toString(), 'wow', false),
+      ImageModel(cloudinary.image('wow').transformation(transformation).toString(), 'wow', true),
+      ImageModel(cloudinary.image('diablo').toString(), 'diablo', false),
+      ImageModel(cloudinary.image('diablo').transformation(transformation).toString(), 'diablo', true),
+      ImageModel(cloudinary.image('witcher').toString(), 'witcher', false),
+      ImageModel(cloudinary.image('witcher').transformation(transformation).toString(), 'witcher', true),
+      ImageModel(cloudinary.image('hogwarts').toString(), 'hogwarts', false),
+      ImageModel(cloudinary.image('hogwarts').transformation(transformation).toString(), 'hogwarts', true),];
   }
 }

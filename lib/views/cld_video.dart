@@ -1,6 +1,7 @@
-import 'package:cloudinary_dart/asset/cld_video.dart';
-import 'package:cloudinary_dart/cloudinary.dart';
-import 'package:cloudinary_dart/transformation/transformation.dart';
+
+import 'package:cloudinary_url_gen/asset/cld_video.dart';
+import 'package:cloudinary_url_gen/cloudinary.dart';
+import 'package:cloudinary_url_gen/transformation/transformation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

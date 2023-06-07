@@ -1,15 +1,9 @@
-import 'dart:io';
 
-import 'package:cloudinary_dart/cloudinary.dart';
-import 'package:cloudinary_dart/transformation/adjust/adjust.dart';
-import 'package:cloudinary_dart/transformation/delivery/delivery_actions.dart';
-import 'package:cloudinary_dart/transformation/effect/effect.dart';
-import 'package:cloudinary_dart/transformation/effect/effect_actions.dart';
-import 'package:cloudinary_dart/transformation/gravity/gravity.dart';
-import 'package:cloudinary_dart/transformation/resize/resize.dart';
-import 'package:cloudinary_dart/transformation/rotate.dart';
-import 'package:cloudinary_dart/transformation/round_corners.dart';
-import 'package:cloudinary_dart/transformation/transformation.dart';
+import 'package:cloudinary_url_gen/cloudinary.dart';
+import 'package:cloudinary_url_gen/transformation/adjust/adjust.dart';
+import 'package:cloudinary_url_gen/transformation/gravity/gravity.dart';
+import 'package:cloudinary_url_gen/transformation/resize/resize.dart';
+import 'package:cloudinary_url_gen/transformation/transformation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_conference_demo/views/cld_image.dart';
 
@@ -64,7 +58,8 @@ class _StatefulWidgetSingleImageState extends State<SingleImage> {
                 child: Column(
                   children: [
                     CldImageWidget(
-                        publicId: publicId,
+                        publicId: publicId + '1',
+                        errorBuilder: (context, url, error) => const Icon(Icons.error),
                         transformation: getTransformation()),
                     Align(
                       alignment: Alignment.bottomLeft,

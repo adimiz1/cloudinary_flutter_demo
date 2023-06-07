@@ -1,4 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloudinary_flutter/image/cld_image.dart';
+import 'package:cloudinary_url_gen/asset/cld_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_conference_demo/views/single_image.dart';
 
@@ -32,17 +34,8 @@ class _StatefulWidgetImageCardState extends State<ImageCard> {
           onTap: () {
             goToSingleImage(widget.model.publicId);
           },
-          child: Container(
-            width: 170,
-            height: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(2),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(widget.model.url),
-              ),
-            ),
-          ),
+          child: Card(elevation: 4.0, child: CldImageWidget(publicId: widget.model.publicId, ),),
+
         ),
         Padding(
           padding: const EdgeInsets.only(left: 12, top: 10),
